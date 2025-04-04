@@ -1,28 +1,32 @@
-# Perceptron - Implementação em Python
+# 📌 Perceptron: Fórmula e Step Function  
 
-## 📌 Visão Geral
-O Perceptron é um dos primeiros modelos de redes neurais artificiais, desenvolvido por Frank Rosenblatt em 1958. Ele é um classificador linear binário, ou seja, funciona bem quando os dados são linearmente separáveis.
+## 🔹 Cálculo da saída do Perceptron  
+A fórmula matemática do **Perceptron** pode ser expressa como:  
 
-Este repositório contém uma implementação simples do Perceptron em Python, utilizando NumPy para operações matemáticas.
+\[
+y = f(z) = f\left(\sum_{i=1}^{n} w_i x_i + b\right)
+\]
 
-## 📖 Como Funciona?
-O Perceptron funciona combinando entradas ponderadas e passando o resultado por uma função de ativação chamada **Step Function**:
+Onde:  
+- \( x_i \) são as entradas (features)  
+- \( w_i \) são os pesos correspondentes  
+- \( b \) é o bias (termo de ajuste)  
+- \( z = \sum_{i=1}^{n} w_i x_i + b \) é a soma ponderada das entradas  
+- \( f(z) \) é a **função de ativação**  
 
-\[ y = f(\sum w_i x_i + b) \]
+## 🔹 Função de Ativação (Step Function)  
+A **Step Function** define a saída binária do Perceptron:  
 
-Onde:
-- \( x_i \) são as entradas,
-- \( w_i \) são os pesos associados a cada entrada,
-- \( b \) é o bias,
-- \( f(x) \) é a função de ativação (Step Function):
-  
-  \[ f(x) = \begin{cases} 
-  1, & \text{se } x \geq 0 \\
-  0, & \text{se } x < 0 
-  \end{cases} \]
+\[
+f(z) =
+\begin{cases} 
+1, & \text{se } z \geq 0 \\
+0, & \text{se } z < 0
+\end{cases}
+\]
 
-O modelo ajusta os pesos utilizando a regra de aprendizado:
+Essa função decide se um dado pertence a uma classe ou outra.  
+Se os dados forem **linearmente separáveis**, o Perceptron pode classificá-los corretamente ajustando os pesos ao longo das iterações.  
 
-\[ w_i = w_i + \eta (y_{real} - y_{previsto}) x_i \]
-
-Onde \( \eta \) é a taxa de aprendizado.
+---
+💡 *O Perceptron foi o primeiro neurônio artificial e serviu de base para redes neurais mais avançadas!*
